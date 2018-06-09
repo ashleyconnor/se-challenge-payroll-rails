@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+JobGroup.create(
+  [
+    {code: "A", hourly_wage: BigDecimal.new("20.00")},
+    {code: "B", hourly_wage: BigDecimal.new("30.00")}
+  ]
+)
