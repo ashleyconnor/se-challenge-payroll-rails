@@ -1,3 +1,18 @@
-New
-
-<%= render partial: "form" %>
+<div class="row">
+  <div class="mx-auto" style="padding-top: 5rem;">
+    <h1>Upload Timesheet</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="mx-auto" style="padding-top: 2rem;">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <%= render partial: "form" %>
+  </div>
+</div>
+<div class="row">
+  <div class="mx-auto" style="padding-top: 2rem;">
+    <%= link_to "Report", report_path %>
+  </div>
+</div>

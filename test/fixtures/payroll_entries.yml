@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  pay_period_start: 2018-06-10
+  pay_period_end: 2018-06-10
+  wages: 9.99
+
+two:
+  employee_id: 1
+  pay_period_start: 2018-06-10
+  pay_period_end: 2018-06-10
+  wages: 9.99

@@ -1,1 +1,4 @@
-Form
+<%= form_for(:time_entries , remote: false) do |form| %>
+  <%= form.file_field :csv %>
+  <%= form.submit "Upload", class: "btn btn-primary" %>
+<% end %>

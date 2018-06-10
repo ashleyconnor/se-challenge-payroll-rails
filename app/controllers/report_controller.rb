@@ -1,22 +1,24 @@
 class ReportController < ApplicationController
 
   def index
-    # generate global report
+    @payroll_entries = PayrollEntry.all
     render "index"
   end
 
   def new
-    # show form for report uploading
     render "new"
   end
 
   def create
-    # insert time entries and redirect to report
-  end
+    report_id = ReportHelper.get_report_id(time_entry_params)
 
-  def show
-    # show individual report by id
-    render "show"
+    if TimeEntry.where(report_id: report_id).exists?
+      flash.now[:danger] = "Failed to process Timesheet (duplicate report id)"
+      render "new"
+    else
+      ReportHelper.process_csv(time_entry_params)
+      redirect_to report_path
+    end
   end
 
   private
